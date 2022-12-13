@@ -1,7 +1,11 @@
 public class SaveStudentOrder {
 
     public static void main(String[] args) {
+        saveStudentOrder();
+    }
 
-        System.out.println("SaveStudentOrder is running");
+    static void saveStudentOrder(){
+        System.out.println("saveStudentOrder is running");
+
     }
 }
