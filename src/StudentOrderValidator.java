@@ -4,26 +4,26 @@ public class StudentOrderValidator {
         checkAll();
     }
 
-    static void checkAll(){
+    static void checkAll() {
         checkCityRegister();
         checkWedding();
         checkChildren();
         checkStudent();
     }
 
-    static void checkCityRegister(){
+    static void checkCityRegister() {
         System.out.println("CityRegister is running");
     }
 
-    static void checkWedding(){
+    static void checkWedding() {
         System.out.println("Wedding is starting");
     }
 
-    static void checkChildren(){
+    static void checkChildren() {
         System.out.println("Children Check is starting");
     }
 
-    static void checkStudent(){
+    static void checkStudent() {
         System.out.println("Студенты проверяются");
     }
 }
