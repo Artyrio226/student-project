@@ -7,6 +7,7 @@ public class SaveStudentOrder {
 
     public static void main(String[] args) {
 
+        StudentOrder s = buildStudentOrder(10);
 
 //        StudentOrder so = new StudentOrder();
 //        long ans = saveStudentOrder(so);
@@ -14,8 +15,7 @@ public class SaveStudentOrder {
     }
 
     static long saveStudentOrder(StudentOrder studentOrder){
-        long answer;
-        answer = 199;
+        long answer = 199;
         System.out.println("saveStudentOrder" );
 
         return answer;
@@ -25,9 +25,14 @@ public class SaveStudentOrder {
     public static StudentOrder buildStudentOrder(long id) {
         StudentOrder so = new StudentOrder();
         so.setStudentOrderId(id);
+        StudentOrder so1 = so;
+        printStudentOrder(so1);
 
-        Adult husband = new Adult("Васильев", "Андрей", "Петрович", null);
 
         return so;
+    }
+
+    static void printStudentOrder(StudentOrder stOr) {
+        System.out.println(stOr.getStudentOrderId());
     }
 }
