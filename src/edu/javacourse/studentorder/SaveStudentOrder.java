@@ -1,6 +1,5 @@
 package edu.javacourse.studentorder;
 
-import edu.javacourse.studentorder.domain.other.Adult;
 import edu.javacourse.studentorder.domain.StudentOrder;
 
 public class SaveStudentOrder {
