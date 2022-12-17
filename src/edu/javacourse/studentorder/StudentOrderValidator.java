@@ -1,11 +1,15 @@
 package edu.javacourse.studentorder;
 
+import edu.javacourse.studentorder.children.AnswerChildren;
 import edu.javacourse.studentorder.domain.*;
 import edu.javacourse.studentorder.mail.MailSender;
+import edu.javacourse.studentorder.register.AnswerCityRegister;
+import edu.javacourse.studentorder.student.AnswerStudent;
 import edu.javacourse.studentorder.validator.ChildrenValidator;
 import edu.javacourse.studentorder.validator.CityRegisterValidator;
 import edu.javacourse.studentorder.validator.StudentValidator;
 import edu.javacourse.studentorder.validator.WeddingValidator;
+import edu.javacourse.studentorder.wedding.AnswerWedding;
 
 public class StudentOrderValidator {
 
@@ -30,22 +34,16 @@ public class StudentOrderValidator {
 
     public void checkAll() {
 
-            StudentOrder[] soArray = readStudentOrders();
-
-//            for (int c = 0; c < soArray.length; c++) {
-//                System.out.println();
-//                checkOneOrder(soArray[c]);
-//            }
+        StudentOrder[] soArray = readStudentOrders();
 
         for (StudentOrder so: soArray) {
-            System.out.println();
             checkOneOrder(so);
         }
-
     }
 
     public StudentOrder[] readStudentOrders() {
-        StudentOrder[] soArray = new StudentOrder[5];
+
+        StudentOrder[] soArray = new StudentOrder[3];
 
         for (int c = 0; c < soArray.length; c++) {
             soArray[c] = SaveStudentOrder.buildStudentOrder(c);
@@ -56,9 +54,9 @@ public class StudentOrderValidator {
 
     public void checkOneOrder(StudentOrder so) {
         AnswerCityRegister cityAnswer = checkCityRegister(so);
-        AnswerWedding wedAnswer = checkWedding(so);
-        AnswerChildren childAnswer = checkChildren(so);
-        AnswerStudent studentAnswer = checkStudent(so);
+//        AnswerWedding wedAnswer = checkWedding(so);
+//        AnswerChildren childAnswer = checkChildren(so);
+//        AnswerStudent studentAnswer = checkStudent(so);
 
         sendMail(so);
     }
