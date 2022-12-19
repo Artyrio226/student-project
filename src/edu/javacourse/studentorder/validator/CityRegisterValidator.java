@@ -1,19 +1,50 @@
 package edu.javacourse.studentorder.validator;
 
-import edu.javacourse.studentorder.domain.AnswerCityRegister;
+import edu.javacourse.studentorder.domain.Child;
+import edu.javacourse.studentorder.register.AnswerCityRegister;
+import edu.javacourse.studentorder.register.CityRegisterCheckerResponse;
 import edu.javacourse.studentorder.domain.StudentOrder;
+import edu.javacourse.studentorder.exception.CityRegisterException;
+import edu.javacourse.studentorder.validator.register.CityRegisterChecker;
+import edu.javacourse.studentorder.validator.register.FakeCityRegisterChecker;
+
+import java.util.Iterator;
+import java.util.List;
 
 public class CityRegisterValidator {
 
-    public String hostName;
-    String login;
-    String password;
+
+    private CityRegisterChecker personChecker;
+
+
+    public CityRegisterValidator() {
+        personChecker = new FakeCityRegisterChecker();
+    }
 
     public AnswerCityRegister checkCityRegister(StudentOrder so) {
-        System.out.println("CityRegister is running: "
-                + hostName + ", " + login + ", " + password);
+        try {
+            CityRegisterCheckerResponse hans = personChecker.checkPerson(so.getHusband());
+            CityRegisterCheckerResponse wans = personChecker.checkPerson(so.getWife());
+
+            List<Child> children = so.getChildren();
+            for (int i=0; i<so.getChildren().size(); i++) {
+                CityRegisterCheckerResponse cans = personChecker.checkPerson(children.get(i));
+            }
+
+            for (Iterator<Child> it = children.iterator(); it.hasNext(); ) {
+                Child child = it.next();
+                CityRegisterCheckerResponse cans = personChecker.checkPerson(child);
+            }
+
+            for (Child child : children) {
+                CityRegisterCheckerResponse cans = personChecker.checkPerson(child);
+            }
+
+        } catch (CityRegisterException ex) {
+            ex.printStackTrace(System.out);
+        }
+
         AnswerCityRegister ans = new AnswerCityRegister();
-        ans.success = false;
         return ans;
     }
 }
