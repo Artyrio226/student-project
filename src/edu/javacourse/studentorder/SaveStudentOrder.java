@@ -53,14 +53,14 @@ public class SaveStudentOrder {
         wife.setStudentId("" + (200000 + id));
         wife.setAddress(address);
 
-//        Ребёнок
+//        Ребёнок1
         Child child1 = new Child("Петрова", "Ирина", "Викторовна", LocalDate.of(1997, 8, 24));
         child1.setCertificateNumber("" + (300000 + id));
         child1.setIssueDate(LocalDate.of(2018, 7, 19));
         child1.setIssueDepartment("Отдел милиции № " + id);
         child1.setAddress(address);
 
-        //        Ребёнок
+//         Ребёнок2
         Child child2 = new Child("Петров", "Евгений", "Викторович", LocalDate.of(1997, 8, 24));
         child2.setCertificateNumber("" + (400000 + id));
         child2.setIssueDate(LocalDate.of(2018, 7, 19));
