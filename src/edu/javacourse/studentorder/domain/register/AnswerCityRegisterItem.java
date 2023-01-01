@@ -1,4 +1,4 @@
-package edu.javacourse.studentorder.register;
+package edu.javacourse.studentorder.domain.register;
 
 import edu.javacourse.studentorder.domain.Person;
 
