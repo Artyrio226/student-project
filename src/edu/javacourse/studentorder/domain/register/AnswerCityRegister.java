@@ -1,4 +1,4 @@
-package edu.javacourse.studentorder.register;
+package edu.javacourse.studentorder.domain.register;
 
 import java.util.ArrayList;
 import java.util.List;

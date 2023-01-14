@@ -1,15 +1,15 @@
 package edu.javacourse.studentorder;
 
-import edu.javacourse.studentorder.children.AnswerChildren;
+import edu.javacourse.studentorder.domain.children.AnswerChildren;
 import edu.javacourse.studentorder.domain.*;
 import edu.javacourse.studentorder.mail.MailSender;
-import edu.javacourse.studentorder.register.AnswerCityRegister;
-import edu.javacourse.studentorder.student.AnswerStudent;
+import edu.javacourse.studentorder.domain.register.AnswerCityRegister;
+import edu.javacourse.studentorder.domain.student.AnswerStudent;
 import edu.javacourse.studentorder.validator.ChildrenValidator;
 import edu.javacourse.studentorder.validator.CityRegisterValidator;
 import edu.javacourse.studentorder.validator.StudentValidator;
 import edu.javacourse.studentorder.validator.WeddingValidator;
-import edu.javacourse.studentorder.wedding.AnswerWedding;
+import edu.javacourse.studentorder.domain.wedding.AnswerWedding;
 
 import java.util.LinkedList;
 import java.util.List;
